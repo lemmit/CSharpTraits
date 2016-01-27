@@ -4,7 +4,7 @@ Many programming languages have got a trait/mixin mechanism. You can find those 
 It is possible to make it work if language allows multiple inheritance (base class then can be threated like trait).
 But no in C#.
 
-I tried to simulate somehow trait behaviour.
+I tried to emulate somehow trait behaviour.
 
 ##Steps
 ###Step 1
