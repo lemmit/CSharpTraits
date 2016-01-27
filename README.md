@@ -6,7 +6,7 @@ But no in C#.
 
 I tried to emulate somehow trait behaviour.
 
-##Steps
+##Steps - how it was done
 ###Step 1
 Create project with ILoggingTrait in LoggingTrait namespace. [ILoggingTrait interface](https://github.com/lemmit/CSharpTraits/blob/master/LoggingTrait/ILoggingTrait.cs)
 That will be used to annotate classes ("extending the trait") [Extended class](https://github.com/lemmit/CSharpTraits/blob/master/CSharpTraits/LoggableClass.cs):
@@ -32,3 +32,9 @@ Traits can also use state. Just specify the properties in an ITrait.
 Disadventages:
 No tools to pick concrete implementation easier, and no Intellisense with information that some methods from Dummy trait should be implemented.
 Changes of concrete trait implementation made project-wise.
+
+
+##Something Extra - interface with default implementation
+Define interface -> Implement it using extension methods -> call from class if want to use default implementation using a convention:
+  this.MethodName(params, @default: true);
+More in code (c'mon, it's just one file): [Here](https://github.com/lemmit/CSharpTraits/blob/master/CSharpInterfaceWithDefaultImplementation/Program.cs)
