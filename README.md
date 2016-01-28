@@ -10,7 +10,9 @@ I tried to emulate somehow trait behaviour.
 ###Step 1
 Create project with ILoggingTrait in LoggingTrait namespace. [ILoggingTrait interface](https://github.com/lemmit/CSharpTraits/blob/master/LoggingTrait/ILoggingTrait.cs)  
 That will be used to annotate classes ("extending the trait") [Extended class](https://github.com/lemmit/CSharpTraits/blob/master/CSharpTraits/LoggableClass.cs):  
+```
   public class LoggableClass : ILoggingTrait
+```
 ###Step 2
 Define trait. Create another project and create class inside LoggingTrait namespace. [Defined trait](https://github.com/lemmit/CSharpTraits/blob/master/DefineLoggingTrait/DummyLoggingTrait.cs)  
 It have to be public static class with public static methods that takes this ILoggable @this param.  
@@ -35,6 +37,8 @@ Disadventages:
 
 
 ##Something Extra - interface with default implementation  
-Define interface -> Implement it using extension methods -> call from class if want to use default implementation using a convention:  
+Define interface -> Implement it using extension methods -> call from class if want to use default implementation using a convention: 
+```
   this.MethodName(params, @default: true);  
+```  
 More in code (c'mon, it's just one file):   [Here](https://github.com/lemmit/CSharpTraits/blob/master/CSharpInterfaceWithDefaultImplementation/Program.cs)
